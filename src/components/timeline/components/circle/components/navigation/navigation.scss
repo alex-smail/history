@@ -1,0 +1,37 @@
+.navigation {
+  display: flex;
+  position: absolute;
+  left: 79px;
+  bottom: -133px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  &__dots {
+    font-family: 'PT Sans', sans-serif;
+    padding-bottom: 20px;
+    font-size: 14px;
+  }
+
+  &__btn {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .navigation {
+    bottom: -254px;
+    left: 1px;
+
+    &__dots {
+      padding-bottom: 5px;
+      padding-left: 2px;
+      font-size: 13px;
+    }
+
+    &__btn {
+      gap: 8px;
+    }
+  }
+}

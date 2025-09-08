@@ -1,0 +1,62 @@
+.timeline {
+  color: #1f2937;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+  height: 100%;
+  border: 1px solid #d1d5db61;
+  position: relative;
+
+  // Горизонтальная полоса по центру
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #d1d5db61;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+
+  // Вертикальная полоса по центру
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #d1d5db61;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 480px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+}
+
+/* Мобильная адаптация */
+@media (max-width: 320px) {
+  .timeline {
+    width: 320px;
+    border: none;
+
+    &::before {
+      position: absolute;
+        top: 268px;
+        width: 280px;
+        background: #C7CDD9;
+    }
+
+    &::after {
+      background: none;
+      opacity: 0.5;
+    }
+  }
+}

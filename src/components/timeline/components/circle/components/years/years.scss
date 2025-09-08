@@ -1,0 +1,54 @@
+.years {
+  display: flex;
+  align-items: center;
+  top: 50%;
+  z-index: 2;
+  height: 160px;
+
+  &__year {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 800;
+    font-size: 200px;
+    line-height: 1;
+    height: 160px;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  &__year--start {
+    color: #5d5fef;
+    padding-right: 86px;
+    margin-bottom: 63px;
+    letter-spacing: -6px;
+  }
+
+  &__year--end {
+    color: #ef5da8;
+    margin-right: 18px;
+    margin-bottom: 64px;
+  }
+}
+
+@media (max-width: 320px) {
+  .years {
+    gap: 23px;
+
+    &__year {
+      
+      font-size: 56px;
+      height: auto;
+      text-shadow: none;
+    }
+
+    &__year--start {
+      color: #3877EE;
+      padding-right: 0;
+      margin-bottom: 0;
+      letter-spacing: 0;
+    }
+
+    &__year--end {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+}

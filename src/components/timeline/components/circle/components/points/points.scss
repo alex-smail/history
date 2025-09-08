@@ -1,0 +1,103 @@
+.points__container {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+.point {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  &__dot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -5px 0 0 -3px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #42567a;
+    transition: all 0.3s ease;
+    position: relative;
+    transform-origin: center center;
+  }
+
+  &__number {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transform-origin: center center;
+    color: #42567a;
+  }
+
+  &:hover .point__dot {
+    background: #ffffff;
+    border: 1px solid #d1d5db61;
+    width: 60px;
+    height: 60px;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &:hover .point__number {
+    opacity: 1;
+    color: #42567a;
+  }
+
+  &.active .point__dot {
+    background: #fefefe;
+    border: 1px solid #d1d5db61;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &.active .point__number {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .points__container {
+    display: none;
+  }
+
+  .point {
+    position: static;
+    transform: none;
+    width: 8px;
+    height: 8px;
+
+    &__dot {
+      display: none;
+    }
+
+    &__number {
+      display: none;
+    }
+
+    &:hover .point__dot {
+      display: none;
+    }
+
+    &:hover .point__number {
+      display: none;
+    }
+
+    &.active .point__dot {
+      display: none;
+    }
+  }
+}

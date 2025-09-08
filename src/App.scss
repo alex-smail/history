@@ -1,0 +1,26 @@
+.app {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial,
+    sans-serif;
+  color: #111827;
+  line-height: 1.6;
+  width: 1440px;
+  height: 1040px;
+  margin: 0 auto;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 320px) {
+  .app {
+    width: 320px;
+    height: 600px;
+    // min-height: 690px;
+    padding: 24px 16px 24px 16px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+}
