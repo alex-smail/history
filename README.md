@@ -50,7 +50,7 @@ npm run build
 
 
 ### Mobile
-
+  
 <div align="center">
   <img src="./src/assets/2.png" alt="img">
-</div>
+</div> 
