@@ -30,8 +30,8 @@ export const Events: React.FC<EventsProps> = ({ events, activeIndex }) => {
 
   return (
     <>
-      <div className="events" ref={eventsRef}>
-        <div className="events__content">
+      <div className="events" >
+        <div className="events__content" ref={eventsRef}>
           <EventNavButton direction="prev" hidden={currentSlide === 0}>
             <span>‹</span>
           </EventNavButton>
