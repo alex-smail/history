@@ -41,3 +41,16 @@ npm run build
 - `npm start` — альтернативный запуск dev-сервера
 - `npm run build` — сборка проекта в production
 
+
+### Desktop
+
+<div align="center">
+  <img src="./src/assets/1.png" alt="img">
+</div>
+
+
+### Mobile
+
+<div align="center">
+  <img src="./src/assets/2.png" alt="img">
+</div>
