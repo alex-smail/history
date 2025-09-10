@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-import "./events.scss";
-import { EventNavButton, EventSlides } from "./components";
+import React, { useState, useEffect, useRef } from 'react';
+import './events.scss';
+import { EventNavButton, EventSlides } from './components';
+import { useCrossfade } from '../../../../hooks';
 
 interface EventItem {
   id: string;
@@ -15,7 +16,10 @@ interface EventsProps {
 
 export const Events: React.FC<EventsProps> = ({ events, activeIndex }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const eventsRef = useRef<HTMLDivElement>(null);
   const swiperRef = useRef<any>(null);
+
+  useCrossfade(eventsRef, [activeIndex], 0.5);
 
   useEffect(() => {
     setCurrentSlide(0);
@@ -25,26 +29,28 @@ export const Events: React.FC<EventsProps> = ({ events, activeIndex }) => {
   }, [activeIndex]);
 
   return (
-    <div className="events">
-      <div className="events__content">
-        <EventNavButton direction="prev" hidden={currentSlide === 0}>
-          <span>‹</span>
-        </EventNavButton>
+    <>
+      <div className="events" ref={eventsRef}>
+        <div className="events__content">
+          <EventNavButton direction="prev" hidden={currentSlide === 0}>
+            <span>‹</span>
+          </EventNavButton>
 
-        <EventSlides
-          events={events}
-          onSwiper={(swiper) => {
-            setCurrentSlide(swiper.activeIndex);
-            swiperRef.current = swiper;
-          }}
-          onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
-        />
+          <EventSlides
+            events={events}
+            onSwiper={(swiper) => {
+              setCurrentSlide(swiper.activeIndex);
+              swiperRef.current = swiper;
+            }}
+            onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
+          />
 
-        <EventNavButton direction="next">
-          <span>›</span>
-        </EventNavButton>
+          <EventNavButton direction="next">
+            <span>›</span>
+          </EventNavButton>
+        </div>
       </div>
       <div className="events__dots" />
-    </div>
+    </>
   );
 };

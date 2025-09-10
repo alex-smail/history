@@ -57,7 +57,7 @@
   .events {
     display: block;
     padding: 0;
-    height: 120px;
+    // height: 120px;
 
     &__header {
       padding: 16px 0 8px 0;
@@ -89,9 +89,13 @@
       justify-content: center;
       align-items: center;
       gap: 2px;
-      height: 16px;
-      margin-bottom: 32px;
-      padding-right: 74px;
+      margin-bottom: 37px;
+      padding-right: 73px;
+
+      span {
+        width: 6px;
+        height: 6px;
+      }
     }
 
     .btn__event {

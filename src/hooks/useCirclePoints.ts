@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
-import { getCirclePoints } from '../components/utils';
+import { getCirclePoints } from '../components/timeline/components/circle/utils';
 
 export function useCirclePoints(
   circleRef: React.RefObject<HTMLDivElement>,

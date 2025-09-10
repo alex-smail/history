@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { getCirclePoints } from '../../../utils';
+import { getCirclePoints } from './utils';
 import { Button } from '../../../button/button';
 import './circle.scss';
 import { useCirclePoints, useTitleAnimation } from '../../../../hooks';
